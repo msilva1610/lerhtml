@@ -1,0 +1,103 @@
+<div id="seven-day-forecast" class="panel panel-default">
+  <div class="panel-heading">
+    <b>Extended Forecast for</b>
+    <h2 class="panel-title">
+	    	    San Francisco CA	</h2>
+  </div>
+  <div class="panel-body" id="seven-day-forecast-body">
+    <div id="seven-day-forecast-container">
+      <ul id="seven-day-forecast-list" class="list-unstyled">
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Today<br><br></p>
+            <p><img src="newimages/medium/few.png" alt="Today: Sunny, with a high near 70. West wind 6 to 11 mph increasing to 12 to 17 mph in the afternoon. Winds could gust as high as 22 mph. " title="Today: Sunny, with a high near 70. West wind 6 to 11 mph increasing to 12 to 17 mph in the afternoon. Winds could gust as high as 22 mph. "
+                class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Sunny</p>
+            <p class="temp temp-high">High: 70 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Tonight<br><br></p>
+            <p><img src="newimages/medium/nfew.png" alt="Tonight: Mostly clear, with a low around 52. West southwest wind 6 to 16 mph, with gusts as high as 22 mph. " title="Tonight: Mostly clear, with a low around 52. West southwest wind 6 to 16 mph, with gusts as high as 22 mph. "
+                class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Mostly Clear</p>
+            <p class="temp temp-low">Low: 52 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Monday<br><br></p>
+            <p><img src="newimages/medium/few.png" alt="Monday: Sunny, with a high near 72. Light and variable wind becoming west 11 to 16 mph in the afternoon. Winds could gust as high as 21 mph. " title="Monday: Sunny, with a high near 72. Light and variable wind becoming west 11 to 16 mph in the afternoon. Winds could gust as high as 21 mph. "
+                class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Sunny</p>
+            <p class="temp temp-high">High: 72 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Monday<br>Night</p>
+            <p><img src="newimages/medium/nsct.png" alt="Monday Night: Partly cloudy, with a low around 52. West southwest wind 8 to 17 mph, with gusts as high as 23 mph. " title="Monday Night: Partly cloudy, with a low around 52. West southwest wind 8 to 17 mph, with gusts as high as 23 mph. "
+                class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Partly Cloudy</p>
+            <p class="temp temp-low">Low: 52 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Tuesday<br><br></p>
+            <p><img src="newimages/medium/sct.png" alt="Tuesday: Mostly sunny, with a high near 69. West wind 6 to 11 mph increasing to 12 to 17 mph in the morning. Winds could gust as high as 22 mph. " title="Tuesday: Mostly sunny, with a high near 69. West wind 6 to 11 mph increasing to 12 to 17 mph in the morning. Winds could gust as high as 22 mph. "
+                class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Mostly Sunny</p>
+            <p class="temp temp-high">High: 69 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Tuesday<br>Night</p>
+            <p><img src="newimages/medium/nsct.png" alt="Tuesday Night: Partly cloudy, with a low around 53." title="Tuesday Night: Partly cloudy, with a low around 53." class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Partly Cloudy</p>
+            <p class="temp temp-low">Low: 53 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Wednesday<br><br></p>
+            <p><img src="newimages/medium/sct.png" alt="Wednesday: Mostly sunny, with a high near 66." title="Wednesday: Mostly sunny, with a high near 66." class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Mostly Sunny</p>
+            <p class="temp temp-high">High: 66 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Wednesday<br>Night</p>
+            <p><img src="newimages/medium/nfew.png" alt="Wednesday Night: Mostly clear, with a low around 52." title="Wednesday Night: Mostly clear, with a low around 52." class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Mostly Clear</p>
+            <p class="temp temp-low">Low: 52 °F</p>
+          </div>
+        </li>
+        <li class="forecast-tombstone">
+          <div class="tombstone-container">
+            <p class="period-name">Thursday<br><br></p>
+            <p><img src="newimages/medium/few.png" alt="Thursday: Sunny, with a high near 64." title="Thursday: Sunny, with a high near 64." class="forecast-icon"></p>
+            <p class="short-desc" style="height: 54px;">Sunny</p>
+            <p class="temp temp-high">High: 64 °F</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      // equalize forecast heights
+      $(function() {
+        var maxh = 0;
+        $(".forecast-tombstone .short-desc").each(function() {
+          var h = $(this).height();
+          if (h > maxh) {
+            maxh = h;
+          }
+        });
+        $(".forecast-tombstone .short-desc").height(maxh);
+      });
+    </script>
+  </div>
+</div>
