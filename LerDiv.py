@@ -36,13 +36,3 @@ for content in tag.contents:
         if (len(conteudo['ACNID']) > 0 and len(conteudo['ACNTEXTO']) == 0 ):
              conteudo['ACNTEXTO'] = str(content)
              print(conteudo)
-        #print(type(content))
-        # print(content)
-        # print('content name: {}'.format(content.name))
-    #print ('==========================================================')
-# i=tag.find_all('i')
-# print (i.attrs)
-# print(len(i))
-# for item in i:
-#     print(item)
-# #print (tag.get_text())

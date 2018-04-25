@@ -42,5 +42,5 @@ print(t)
 # print(dfarrCG['TextoACN'])
 
 #proximos passos:
-# validar se o dataframe esta carredando as colunas corretas
+# validar se o dataframe esta carregando as colunas corretas
 # usar o python ide para resolver o problema do utf-8

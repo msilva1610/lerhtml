@@ -16,29 +16,41 @@ from bs4 import NavigableString
 from bs4 import Tag
 import pandas as pd
 
-def lerblock():
-    return '=============================================================='
+# conteudo = {'TipoCG':'', 'ACNID': '', 'ACNTexto':''}
+global conteudo 
 
 def main():
     # soup = BeautifulSoup(html_doc, "html.parser")
     # blocks = soup.find_all(class_="block")
 
-    with open("get.html") as fp:
+    conteudo = {'TipoCG':'', 'ACNID': '', 'ACNTexto':''}
+
+    with open("aim.html") as fp:
         soup = BeautifulSoup(fp, "html.parser")
 
     verbete = soup.find(class_="verbete bs-component")
 
     blocks = verbete.find_all(class_="block")
-
+    cg = ''
+    acn = ''
+    acntexto = ''
     for b in blocks:
+        acn = ''
         for c in b.contents:
-            # if (isinstance(c, NavigableString)):
-            #     print(c.name)
             if (isinstance(c, Tag)):
                 if (c.name == 'cg'):
-                    print("Nome: {}, Texto: {}".format(c.name, c.get_text()))
-                if (c.name == 'acn'):
-                    print("Nome: {}, Texto: {}".format(c.name, c.get_text()))
-                    
+                    cg = c.get_text()
+                    #print('conteudo tipocg: {}'.format(c.get_text()))
+                elif (c.name == 'acn' and len(cg) > 0):
+                    acn = c.get_text()
+                    #print('conteudo acnid: {}'.format(c.get_text()))
+            if (isinstance(c, NavigableString) and len(str(c).strip()) > 0):
+                if (len(cg) > 0) and (len(acn) > 0) and len(acntexto) == 0:
+                    acntexto = str(c)
+                    print('CG:{},ACN:{}, acntexto:{} '.format(cg,acn,acntexto))
+                    acn=''
+                    acntexto=''
+                elif len(acntexto) > 0:
+                    break
 if __name__ == "__main__":
     main()
